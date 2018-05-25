@@ -1,0 +1,28 @@
+<?php
+	Class memberController extends Controller{
+
+		//회원가입
+		function join(){
+			memberChk();
+			if (isset($_POST['action'])) $this->model->process();
+		}
+
+		//로그인
+		function login(){
+			memberChk();
+			if (isset($_POST['action'])) {
+				$a = $this->model->login();
+				access($a == "","아이디 또는 비밀번호가 일치하지 않습니다.");
+				$_SESSION['member'] = $a;
+				alert("로그인 되었습니다.");
+				move('/');
+			}
+		}
+
+		//로그아웃
+		function logout(){
+			loginChk();
+			access(session_destroy(),"로그아웃 되었습니다.","/");
+		}
+		
+	}
