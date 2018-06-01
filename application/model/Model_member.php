@@ -11,12 +11,21 @@
 			return $this->fetch();
 		}
 
+		function memberDelete(){
+			$this->sql = "DELETE FROM member where idx='{$_POST['idx']}'";
+			return $this->query();
+		}
+
 		function process(){
 			$this->action = $_POST['action'];
 			$this->table = "member";
 			$cancel = "/action";
+			$add_sql = "";
 			access($this->idChk() != 0,"중복된 아이디 입니다.");
 			$column = $this->get_column($_POST,$cancel);
+			$add_sql .= ", date=now()";
+			$add_sql .= ", change_date=now()";
+			$column .= $add_sql;
 			access($this->get_query($column),"회원가입이 완료되었습니다.","/");
 		}
 

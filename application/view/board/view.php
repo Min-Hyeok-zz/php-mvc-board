@@ -1,15 +1,44 @@
-<fieldset><legend>글보기 페이지</legend>
-	<p>작성자 : <?php echo $this->view->writer; ?></p>
-	<p>제에목 : <?php echo $this->view->subject; ?></p>
-	<p>내애용 : <?php echo $this->view->content; ?></p>
-	<p>작성일 : <?php echo $this->view->date; ?></p>
-	<?php if ($this->view->file_size != 0): ?>
-	<p>파이일 : <a href="/board/down/<?php echo $this->view->idx; ?>"><?php echo $this->view->file_name; ?> (<?php echo get_size($this->view->file_size); ?>)</a></p>
-	<?php endif ?>
-	<p>조회수 : <?php echo number_format($this->view->hit); ?></p>
-	<?php if (isset($_SESSION['member'])): ?>
-		<button onclick="if(confirm('삭제하시겠습니까?')) location.href='/board/delete/<?php echo $this->view->idx; ?>'">삭제</button>
-		<a href="/board/update/<?php echo $this->view->idx; ?>">수정</a>
-	<?php endif ?>
-</fieldset>
-<a href="/">메인으로</a>
+<div id="view">
+	<p class="title">글보기 페이지</p>
+	<table class="view-table">
+		<colgroup>
+			<col>
+			<col>
+		</colgroup>
+		<tbody>
+			<tr>
+				<td>작성자</td>
+				<td><?php echo $this->view->writer ?></td>
+			</tr>
+			<tr>
+				<td>글제목</td>
+				<td><?php echo $this->view->subject ?></td>
+			</tr>
+			<tr>
+				<td>글내용</td>
+				<td><?php echo $this->view->content ?></td>
+			</tr>
+			<tr>
+				<td>작성일</td>
+				<td><?php echo $this->view->date ?></td>
+			</tr>
+			<?php if ($this->view->file_size > 0): ?>
+			<tr>
+				<td>파일</td>
+				<td><a href="/board/down/<?php echo $this->view->idx; ?>"><?php echo $this->view->file_name; ?> (<?php echo get_size($this->view->file_size); ?>)</a></td>
+			</tr>
+			<?php endif ?>
+			<tr>
+				<td>조회수</td>
+				<td><?php echo $this->view->hit ?></td>
+			</tr>
+			<?php if (isset($_SESSION['member'])): ?>
+				<tr>
+					<td><button onclick="if(confirm('삭제하시겠습니까?')) location.href='/board/delete/<?php echo $this->view->idx; ?>'">삭제</button></td>
+					<td><a href="/board/update/<?php echo $this->view->idx; ?>" class="btn">수정</a></td>
+				</tr>
+			<?php endif ?>
+		</tbody>
+	</table>
+	<a href="/" class="btn">메인으로</a>
+</div>

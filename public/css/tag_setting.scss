@@ -8,9 +8,11 @@ body{font-size: 14px;}
 
 p{word-break: break-all;}
 
-input[type="button"],button,label{cursor: pointer;}
+input[type="button"],button{cursor: pointer;}
 
-input:focus{box-shadow: 0 0 5px rgba(0,0,0,0.4);}
+input[type="text"],input[type="password"]{border-radius: 5px;}
+
+input:focus{transition:.4s;box-shadow: 0 0 5px rgba(0,0,0,0.4);}
 
 .btn{
 	display: inline-block;
@@ -19,9 +21,18 @@ input:focus{box-shadow: 0 0 5px rgba(0,0,0,0.4);}
 	background: $mainColor;
 	color: #fff;
 	transition: .3s;
+	border-radius: 5px;
 	&:hover{
 		background: fade-out($mainColor,.2);
 	}
+}
+
+.title{
+	font-size: 20px;
+	font-weight: bold;
+	color: $mainColor;
+	text-align: center;
+	margin-bottom: 20px;
 }
 
 %center{
