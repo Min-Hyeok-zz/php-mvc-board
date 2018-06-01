@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- 생성 시간: 18-05-04 11:37
+-- 생성 시간: 18-06-01 13:03
 -- 서버 버전: 10.1.30-MariaDB
 -- PHP 버전: 7.2.1
 
@@ -34,11 +34,19 @@ CREATE TABLE `board` (
   `subject` varchar(255) NOT NULL,
   `content` text NOT NULL,
   `date` datetime NOT NULL,
+  `change_date` datetime NOT NULL,
   `hit` int(11) NOT NULL,
   `file_name` varchar(255) NOT NULL,
   `file_size` int(11) NOT NULL,
   `change_name` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- 테이블의 덤프 데이터 `board`
+--
+
+INSERT INTO `board` (`idx`, `writer`, `subject`, `content`, `date`, `change_date`, `hit`, `file_name`, `file_size`, `change_name`) VALUES
+(34, 'asd', '글제목', '글내용글내용글내용글내용글내용글내용글내용', '2018-06-01 12:02:26', '0000-00-00 00:00:00', 15, 'asd.png', 35081, '152782214649151');
 
 -- --------------------------------------------------------
 
@@ -50,8 +58,17 @@ CREATE TABLE `member` (
   `idx` int(11) NOT NULL,
   `id` varchar(100) NOT NULL,
   `pw` varchar(100) NOT NULL,
-  `name` varchar(100) NOT NULL
+  `name` varchar(100) NOT NULL,
+  `date` datetime NOT NULL,
+  `change_date` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- 테이블의 덤프 데이터 `member`
+--
+
+INSERT INTO `member` (`idx`, `id`, `pw`, `name`, `date`, `change_date`) VALUES
+(39, 'test', '1234', '테스트', '2018-06-01 16:07:11', '2018-06-01 16:07:11');
 
 --
 -- 덤프된 테이블의 인덱스
@@ -77,13 +94,13 @@ ALTER TABLE `member`
 -- 테이블의 AUTO_INCREMENT `board`
 --
 ALTER TABLE `board`
-  MODIFY `idx` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `idx` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- 테이블의 AUTO_INCREMENT `member`
 --
 ALTER TABLE `member`
-  MODIFY `idx` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `idx` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
