@@ -2,7 +2,7 @@
 	//세선 스타트
 	session_start();
 
-	//알러트
+	//경고창
 	function alert($msg){
 		echo "<script>alert('{$msg}');</script>";
 	}
@@ -23,12 +23,12 @@
 		}
 	}
 
-	//비회원이면 ㄲㅈ
+	//비회원이면 뒤로
 	function loginChk(){
 		access(!isset($_SESSION['member']),"회원만 접근 가능합니다.");
 	}
 
-	//회원이면 ㄲㅈ
+	//회원이면 뒤로
 	function memberChk(){
 		access(isset($_SESSION['member']),"이미 로그인 하셨습니다.");
 	}
@@ -37,11 +37,8 @@
 	function file_upload($file){
 		$name = $file['name'];//파일이름 저장
 		$tmp_name = $file['tmp_name'];//파일 상세정보 저장
-		access($tmp_name == "","파일이 업로드 되지 않았습니다.");//파일정보 없으면 ㄲㅈ
+		access($tmp_name == "","파일이 업로드 되지 않았습니다.");//파일정보 없으면 뒤로
 		if (is_uploaded_file($tmp_name)) {//파일이 업로드 되었을 경우
-			$arr = ['image/jpg','image/jpeg','image/png','image/gif','image/tmp'];//이미지 확장자 배열
-			$type = $file['type'];//업로드한 파일 확장자
-			access(!in_array($type, $arr),"이미지 파일만 업로드 할 수 있습니다.");//둘이 배열이 일치하지 않으면 false
 			$change_name = time().rand(0,99999);//파일이름 중복 안되게 change_name 생성
 			if (move_uploaded_file($tmp_name, _DATA.$change_name)) {//파일이 해당경로에 change_name으로 이름 바꿔서 업로드됨
 				return $change_name;//change_name 반환
@@ -55,7 +52,7 @@
 		if ($size > 1) {
 			$size = number_format($size)."MB";
 		} else{
-			$size = ($size*1000);
+			$size = ($size*1024);
 			$size = substr($size, 0,5)."KB";
 		}
 		return $size;

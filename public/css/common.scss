@@ -1,0 +1,65 @@
+@charset "utf-8";
+@import "functions";
+@import "tag_setting";
+
+/* 헤더 */
+
+#header{
+	max-width: 1600px;
+	height: 60px;
+	display: flex;
+	background: $mainColor;
+	color: #fff;
+	@extend %center;
+	justify-content: space-between;
+	padding-left: 0 10px;
+	>#logo{
+		font-size: 24px;
+		margin-left: 10px;
+	}
+	>#gnb{
+		>ul{
+			display: flex;
+			>li > a{
+				display: block;
+				padding: 20px 25px;
+				cursor: pointer;
+				transition: .3s;
+				border: 1px solid $mainColor;
+				&:hover{
+					background: #fff;
+					color: $mainColor;
+				}
+			}
+		}
+	}
+}
+
+/* 메인 페이지 */
+
+#main{
+	max-width: 1200px;
+	margin: 0 auto;
+	margin-top: 100px;
+	padding: 0 4vw;
+	@include clr();
+	>.btn_group{
+		margin-top: 15px;
+		>a{
+			float: right;
+		}
+	}
+	>.list-table{
+		>thead{
+			text-align: center;
+			font-size: 20px;
+			font-weight: bold;
+			color: $mainColor;
+		}
+	}
+	>.list{
+		color: $mainColor;
+		font-weight: bold;
+		font-size: 16px;
+	}
+}

@@ -1,0 +1,32 @@
+@charset "utf-8";
+
+*{margin: 0;padding: 0;list-style: none;text-decoration: none;border: none;outline: none;color: inherit;box-sizing: border-box;}
+
+html{overflow-x: hidden;}
+
+body{font-size: 14px;}
+
+p{word-break: break-all;}
+
+input[type="button"],button,label{cursor: pointer;}
+
+input:focus{box-shadow: 0 0 5px rgba(0,0,0,0.4);}
+
+.btn{
+	display: inline-block;
+	padding: 10px 20px;
+	cursor: pointer;
+	background: $mainColor;
+	color: #fff;
+	transition: .3s;
+	&:hover{
+		background: fade-out($mainColor,.2);
+	}
+}
+
+%center{
+	margin: 0 auto;
+	justify-content: center;
+	text-align: center;
+	align-items: center;
+}

@@ -3,7 +3,9 @@
 	<p>제에목 : <?php echo $this->view->subject; ?></p>
 	<p>내애용 : <?php echo $this->view->content; ?></p>
 	<p>작성일 : <?php echo $this->view->date; ?></p>
+	<?php if ($this->view->file_size != 0): ?>
 	<p>파이일 : <a href="/board/down/<?php echo $this->view->idx; ?>"><?php echo $this->view->file_name; ?> (<?php echo get_size($this->view->file_size); ?>)</a></p>
+	<?php endif ?>
 	<p>조회수 : <?php echo number_format($this->view->hit); ?></p>
 	<?php if (isset($_SESSION['member'])): ?>
 		<button onclick="if(confirm('삭제하시겠습니까?')) location.href='/board/delete/<?php echo $this->view->idx; ?>'">삭제</button>

@@ -2,7 +2,6 @@
 	Class Application{
 
 		function __construct(){//생성자 : 클래스가 로드될 때 자동으로 실행
-			$this->getParam();
 			$ctr = Application::getParam()->type."Controller";
 			new $ctr();
 		}

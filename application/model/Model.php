@@ -1,6 +1,10 @@
 <?php
 	Class Model{
 		
+		protected $db;
+		protected $param;
+		protected $sql;
+
 		function __construct(){//db연결
 			$this->param = Application::getParam();
 			$this->db = new PDO("mysql:host=localhost;dbname=mvc;charset=utf8;","root","");
@@ -53,13 +57,13 @@
 			switch ($this->action) {
 				case 'insert':
 					$sql = "INSERT INTO {$this->table} SET ";
-					break;
+				break;
 				case 'update':
 					$sql = "UPDATE {$this->table} SET ";
-					break;
+				break;
 				case 'delete':
 					$sql = "DELETE FROM {$this->table} ";
-					break;
+				break;
 			}
 			$sql .= $column;
 			return $this->query($sql);
