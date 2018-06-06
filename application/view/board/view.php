@@ -1,6 +1,6 @@
 <div id="view">
 	<p class="title">글보기 페이지</p>
-	<table class="view-table">
+	<table class="table">
 		<colgroup>
 			<col>
 			<col>
@@ -34,11 +34,18 @@
 			</tr>
 			<?php if (isset($_SESSION['member'])): ?>
 				<tr>
-					<td><button onclick="if(confirm('삭제하시겠습니까?')) location.href='/board/delete/<?php echo $this->view->idx; ?>'">삭제</button></td>
-					<td><a href="/board/update/<?php echo $this->view->idx; ?>" class="btn">수정</a></td>
+					<td>관리</td>
+					<td>
+						<a href="/board/update/<?php echo $this->view->idx; ?>" class="btn">수정</a>
+						<button onclick="if(confirm('삭제하시겠습니까?')) location.href='/board/delete/<?php echo $this->view->idx; ?>'" class="btn">삭제</button>
+					</td>
 				</tr>
 			<?php endif ?>
 		</tbody>
 	</table>
 	<a href="/" class="btn">메인으로</a>
+	<div class="btn_group">
+		<a href="<?php echo $this->next ?>" class="btn">다음</a>
+		<a href="<?php echo $this->prev ?>" class="btn">이전</a>
+	</div>
 </div>

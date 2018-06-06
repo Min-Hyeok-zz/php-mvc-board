@@ -10,6 +10,8 @@
 		//글보기 페이지
 		function view(){
 			$this->view = $this->model->getView();
+			$this->prev = $this->model->prev();
+			$this->next = $this->model->next();
 			access($this->view == "","존재하지 않는 페이지 입니다.");
 		}
 

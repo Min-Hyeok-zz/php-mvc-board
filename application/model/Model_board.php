@@ -9,12 +9,23 @@
 			return $this->fetch("SELECT * FROM board where idx='{$this->param->idx}'");
 		}
 
+		function prev(){
+			$prev = (array)$this->fetch("SELECT max(idx) FROM board where idx < '{$this->param->idx}'");
+			return $prev['max(idx)'];
+		}
+
+		function next(){
+			$next = (array)$this->fetch("SELECT min(idx) FROM board where idx > '{$this->param->idx}'");
+			return $next['min(idx)'];
+		}
+
 		function process(){
 			$this->action = $_POST['action'];
 			$this->table = "board";
 			$cancel = "/action/file";
 			$column = $this->get_column($_POST,$cancel);
 			$add_sql = "";
+			$change_name = "";
 			$data = $this->getView();
 			switch ($this->action) {
 				case 'insert':

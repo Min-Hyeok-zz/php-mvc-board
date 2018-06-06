@@ -28,7 +28,7 @@ $mainColor:#3f3f3f;
 	}
 }
 
-@mixin circle($size,$bg,$color){
+@mixin circle ($size,$bg,$color) {
 	display: inline-block;
 	width: $size;
 	height: $size;

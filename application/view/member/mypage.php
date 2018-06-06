@@ -1,6 +1,6 @@
 <div id="mypage">
 	<p class="title">마이 페이지</p>
-	<table>
+	<table class="table">
 		<colgroup>
 			<col>
 			<col>

@@ -49,17 +49,20 @@
 	//파일 용량 계산(MB단위)
 	function get_size($size){
 		$size /= 1024*1024;
-		if ($size > 1) {
+		if ($size > 1024) {
+			$size = $size/1024;
+			$size = substr($size, 0,5)."GB";
+		} else if ($size > 1) {
 			$size = number_format($size)."MB";
 		} else{
-			$size = ($size*1024);
+			$size = ($size*1024)."KB";
 			$size = substr($size, 0,5)."KB";
 		}
 		return $size;
 	}
 
 	//정의되지 않는 객체가 생성되었을 때 자동으로 실행
-	function __autoload($className){//$className == new (클래스 이름) <-
+	function __autoload($className){//$className == new (클래스 이름)
 		$className = strtolower($className);//클래스 이름 소문자로
 		$className2 = preg_replace("/(model|application)(.*)/", "$1", $className);
 		switch ($className2) {

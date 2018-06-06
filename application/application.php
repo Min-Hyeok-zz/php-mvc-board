@@ -6,7 +6,7 @@
 			new $ctr();
 		}
 
-		function getParam(){//url 주소를 변수로 저장
+		static function getParam(){//url 주소를 변수로 저장
 			if (isset($_GET['param'])) $get = explode("/", $_GET['param']);
 			$param['type'] = isset($get[0]) && $get[0] != "" ? $get[0] : "main";
 			$param['page'] = isset($get[1]) && $get[1] != "" ? $get[1] : NULL;
