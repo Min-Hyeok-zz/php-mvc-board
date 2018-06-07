@@ -25,14 +25,19 @@
 			<?php if ($this->view->file_size > 0): ?>
 			<tr>
 				<td>파일</td>
-				<td><a href="/board/down/<?php echo $this->view->idx; ?>"><?php echo $this->view->file_name; ?> (<?php echo get_size($this->view->file_size); ?>)</a></td>
+				<td>
+					<a href="/board/down/<?php echo $this->view->idx; ?>">
+					<?php echo $this->view->file_name; ?> 
+					(<?php echo get_size($this->view->file_size); ?>)
+					</a>
+				</td>
 			</tr>
 			<?php endif ?>
 			<tr>
 				<td>조회수</td>
 				<td><?php echo $this->view->hit ?></td>
 			</tr>
-			<?php if (isset($_SESSION['member'])): ?>
+			<?php if (isset($_SESSION['member']) && $this->view->midx == $_SESSION['member']->idx): ?>
 				<tr>
 					<td>관리</td>
 					<td>

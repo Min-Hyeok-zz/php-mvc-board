@@ -11,7 +11,6 @@
 		function login(){
 			memberChk();
 			if (isset($_POST['action'])) {
-				$this->model->query("UPDATE member SET change_date=now() where id='{$_POST['id']}' and pw='{$_POST['pw']}'");
 				$a = $this->model->login();
 				access($a == "","아이디 또는 비밀번호가 일치하지 않습니다.");
 				$_SESSION['member'] = $a;

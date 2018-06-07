@@ -19,6 +19,13 @@
 			return $next['min(idx)'];
 		}
 
+		function delete(){
+			$data = $this->getView();
+			access($data->midx != $_SESSION['member']->idx,"이 글의 작성자만 삭제할 수 있습니다.");
+			@unlink(_DATA.$data->change_name);
+			$this->model->query("DELETE FROM board where idx='{$this->param->idx}'");
+		}
+
 		function process(){
 			$this->action = $_POST['action'];
 			$this->table = "board";

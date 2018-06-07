@@ -33,9 +33,7 @@
 		//글 삭제
 		function delete(){
 			loginChk();
-			$data = $this->model->getView();
-			@unlink(_DATA.$data->change_name);
-			$this->model->query("DELETE FROM board where idx='{$this->param->idx}'");
+			$this->model->delete();
 			alert("삭제되었습니다.");
 			move("/");
 		}
