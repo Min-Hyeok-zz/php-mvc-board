@@ -7,6 +7,7 @@
 		}
 
 		function login(){
+			$this->query("UPDATE member SET change_date=now() where id='{$_POST['id']}' and pw='{$_POST['pw']}'");
 			$this->sql = "SELECT * FROM member where id='{$_POST['id']}' and pw='{$_POST['pw']}'";
 			return $this->fetch();
 		}
@@ -18,7 +19,7 @@
 			}
 			$this->sql = "
 				DELETE FROM member where idx='{$_POST['idx']}';
-				DELETE FROM board where midx='{$_SESSION['member']->idx}';
+				DELETE FROM board where midx='{$_POST['idx']}';
 			";
 			return $this->query();
 		}
