@@ -52,20 +52,18 @@ input:focus, textarea:focus { transition: .4s; box-shadow: 0 0 5px rgba(0, 0, 0,
 #header > #gnb > ul > li > a:hover { background: #6f6f6f; color: #fff; }
 
 /* 메인 페이지 */
-#main { max-width: 1200px; margin: 0 auto; padding: 0 4vw; margin-top: 80px; }
-#main.after { display: block; content: ""; clear: both; }
-#main > .list-table { width: 100%; border-spacing: 0 0; margin-bottom: 15px; }
-#main > .list-table > colgroup > col:nth-child(1) { width: 10%; }
-#main > .list-table > colgroup > col:nth-child(2) { width: 10%; }
-#main > .list-table > colgroup > col:nth-child(3) { width: 65%; }
-#main > .list-table > colgroup > col:nth-child(4) { width: 15%; }
-#main > .list-table > thead { font-size: 14px; background: #3f3f3f; color: #fff; }
-@media (max-width: 767px) { #main > .list-table > thead { font-size: 3vw; } }
-#main > .list-table > thead tr > th { padding: 5px; }
-#main > .list-table > thead tr > th:nth-child(3) { text-align: left; }
-#main > .list-table > tbody tr { text-align: center; }
-#main > .list-table > tbody tr > td { padding: 5px; border-bottom: 1px solid rgba(63, 63, 63, 0.4); }
-#main > .list-table > tbody tr > td:nth-child(3) { text-align: left; }
-@media (max-width: 767px) { #main > .list-table > tbody tr > td { font-size: 3vw; } }
+.list-table { width: 100%; border-spacing: 0 0; margin-bottom: 15px; }
+.list-table > colgroup > col:nth-child(1) { width: 10%; }
+.list-table > colgroup > col:nth-child(2) { width: 10%; }
+.list-table > colgroup > col:nth-child(3) { width: 65%; }
+.list-table > colgroup > col:nth-child(4) { width: 15%; }
+.list-table > thead { font-size: 14px; background: #3f3f3f; color: #fff; }
+@media (max-width: 767px) { .list-table > thead { font-size: 12px; } }
+.list-table > thead tr > th { padding: 5px; }
+.list-table > thead tr > th:nth-child(3) { text-align: left; }
+.list-table > tbody tr { text-align: center; }
+.list-table > tbody tr > td { padding: 5px; border-bottom: 1px solid rgba(63, 63, 63, 0.4); }
+.list-table > tbody tr > td:nth-child(3) { text-align: left; }
+@media (max-width: 767px) { .list-table > tbody tr > td { font-size: 12px; } }
 
 /*# sourceMappingURL=common.css.map */

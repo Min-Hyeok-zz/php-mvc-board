@@ -1,4 +1,4 @@
-<div id="main">
+<div class="content">
 	<p class="title">게시글 리스트</p>
 	<table class="list-table">
 		<colgroup>
