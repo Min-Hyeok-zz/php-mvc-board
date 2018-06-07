@@ -1,4 +1,4 @@
-<div id="view">
+<div class="content">
 	<p class="title">글보기 페이지</p>
 	<table class="table">
 		<colgroup>

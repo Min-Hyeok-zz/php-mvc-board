@@ -1,7 +1,8 @@
-<div id="write" class="form">
+<div class="form">
 	<p class="title">글작성 페이지</p>
 	<form action="" method="post" enctype="multipart/form-data">
 		<input type="hidden" name="action" value="insert">
+		<input type="hidden" name="midx" value="<?php echo $_SESSION['member']->idx ?>">
 		<label>
 			<input type="text" name="writer" value="<?php echo $_SESSION['member']->name; ?>" readonly required>
 		</label>

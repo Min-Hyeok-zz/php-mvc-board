@@ -1,4 +1,4 @@
-<div id="write" class="form">
+<div class="form">
 	<p class="title">글수정 페이지</p>
 	<form action="" method="post" enctype="multipart/form-data">
 		<input type="hidden" name="action" value="update">

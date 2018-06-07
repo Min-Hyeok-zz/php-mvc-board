@@ -1,4 +1,4 @@
-<div id="mypage">
+<div class="content">
 	<p class="title">마이 페이지</p>
 	<table class="table">
 		<colgroup>

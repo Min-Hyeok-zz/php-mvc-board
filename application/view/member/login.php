@@ -1,4 +1,4 @@
-<div id="login" class="form">
+<div class="form">
 	<p class="title">로그인 페이지</p>
 	<form action="" method="post">
 		<input type="hidden" name="action">

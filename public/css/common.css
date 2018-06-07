@@ -5,13 +5,13 @@ html { overflow-x: hidden; }
 
 body { font-size: 14px; }
 
-p { word-break: break-all; }
+p, td { word-break: break-all; }
 
 input[type="button"], button { cursor: pointer; }
 
 input[type="text"], input[type="password"], textarea, input[type="file"] { border-radius: 5px; }
 
-input:focus { transition: .4s; box-shadow: 0 0 5px rgba(0, 0, 0, 0.4); }
+input:focus, textarea:focus { transition: .4s; box-shadow: 0 0 5px rgba(0, 0, 0, 0.4); }
 
 #header { margin: 0 auto; justify-content: center; text-align: center; align-items: center; }
 
@@ -19,6 +19,7 @@ input:focus { transition: .4s; box-shadow: 0 0 5px rgba(0, 0, 0, 0.4); }
 /* 버튼 */
 .btn { display: inline-block; padding: 10px 20px; cursor: pointer; background: #3f3f3f; color: #fff; transition: .3s; border-radius: 5px; }
 .btn:hover { background: rgba(63, 63, 63, 0.8); }
+@media (max-width: 767px) { .btn { font-size: 12px; } }
 
 .btn_group > a { float: right; margin-left: 5px; }
 
@@ -31,6 +32,7 @@ input:focus { transition: .4s; box-shadow: 0 0 5px rgba(0, 0, 0, 0.4); }
 .table > colgroup > col:nth-child(2) { width: 80%; }
 .table > tbody > tr > td { padding: 10px; }
 .table > tbody > tr > td:nth-child(1) { background: #3f3f3f; color: #fff; }
+@media (max-width: 767px) { .table > tbody > tr > td { font-size: 12px; } }
 
 /* 폼(join,login,write,update) */
 .form { max-width: 600px; margin: 0 auto; margin-top: 80px; color: #3f3f3f; padding: 0 15px; }
@@ -38,6 +40,9 @@ input:focus { transition: .4s; box-shadow: 0 0 5px rgba(0, 0, 0, 0.4); }
 .form > form > label { width: 100%; height: 40px; display: inline-block; text-align: center; margin-bottom: 20px; }
 .form > form > label > input { width: 100%; height: 100%; border: 1px solid rgba(63, 63, 63, 0.4); margin-bottom: 20px; padding: 10px; }
 .form > form > label > textarea { width: 100%; height: 200px; border: 1px solid rgba(63, 63, 63, 0.4); padding: 10px; margin-bottom: 20px; }
+
+/* 컨텐츠 */
+.content { max-width: 1000px; margin: 0 auto; margin-top: 80px; padding: 0 4vw; }
 
 /* 헤더 */
 #header { max-width: 1600px; height: 50px; display: flex; background: #3f3f3f; color: #fff; justify-content: space-between; padding-left: 0 10px; }
@@ -55,16 +60,12 @@ input:focus { transition: .4s; box-shadow: 0 0 5px rgba(0, 0, 0, 0.4); }
 #main > .list-table > colgroup > col:nth-child(3) { width: 65%; }
 #main > .list-table > colgroup > col:nth-child(4) { width: 15%; }
 #main > .list-table > thead { font-size: 14px; background: #3f3f3f; color: #fff; }
+@media (max-width: 767px) { #main > .list-table > thead { font-size: 3vw; } }
 #main > .list-table > thead tr > th { padding: 5px; }
 #main > .list-table > thead tr > th:nth-child(3) { text-align: left; }
 #main > .list-table > tbody tr { text-align: center; }
 #main > .list-table > tbody tr > td { padding: 5px; border-bottom: 1px solid rgba(63, 63, 63, 0.4); }
 #main > .list-table > tbody tr > td:nth-child(3) { text-align: left; }
-
-/* 마이 페이지 */
-#mypage { max-width: 1000px; margin: 0 auto; margin-top: 80px; }
-
-/* 글보기 페이지 */
-#view { max-width: 1000px; margin: 0 auto; margin-top: 80px; }
+@media (max-width: 767px) { #main > .list-table > tbody tr > td { font-size: 3vw; } }
 
 /*# sourceMappingURL=common.css.map */

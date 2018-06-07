@@ -1,4 +1,4 @@
-<div id="join" class="form">
+<div class="form">
 	<p class="title">회원가입 페이지</p>
 	<form action="" method="post">
 		<input type="hidden" name="action" value="insert">

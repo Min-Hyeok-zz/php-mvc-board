@@ -17,6 +17,9 @@
 	&:hover{
 		background: fade-out($mainColor,.2);
 	}
+	@include mobile() {
+		font-size: 12px;
+	}
 }
 
 .btn_group{
@@ -56,6 +59,9 @@
 				&:nth-child(1){
 					background: $mainColor;
 					color: #fff;
+				}
+				@include mobile () {
+					font-size: 12px;
 				}
 			}
 		}
@@ -97,6 +103,15 @@
 			}
 		}
 	}
+}
+
+/* 컨텐츠 */
+
+.content{
+	max-width: 1000px;
+	margin: 0 auto;
+	margin-top: 80px;
+	padding: 0 4vw;
 }
 
 /* 헤더 */
@@ -153,6 +168,9 @@
 			font-size: 14px;
 			background: $mainColor;
 			color: #fff;
+			@include mobile() {
+				font-size: 3vw;
+			}
 			tr{
 				>th{
 					padding: 5px;
@@ -171,26 +189,11 @@
 					&:nth-child(3){
 						text-align: left;
 					}
+					@include mobile () {
+						font-size: 3vw;
+					}
 				}
 			}
 		}
 	}
-}
-
-
-
-/* 마이 페이지 */
-
-#mypage{
-	max-width: 1000px;
-	margin: 0 auto;
-	margin-top: 80px;
-}
-
-/* 글보기 페이지 */
-
-#view{
-	max-width: 1000px;
-	margin: 0 auto;
-	margin-top: 80px;
 }

@@ -6,17 +6,12 @@ html{overflow-x: hidden;}
 
 body{font-size: 14px;}
 
-p{word-break: break-all;}
+p,td{word-break: break-all;}
 
 input[type="button"],button{cursor: pointer;}
 
 input[type="text"],input[type="password"],textarea,input[type="file"]{border-radius: 5px;}
 
-input:focus{transition:.4s;box-shadow: 0 0 5px rgba(0,0,0,0.4);}
+input:focus,textarea:focus{transition:.4s;box-shadow: 0 0 5px rgba(0,0,0,0.4);}
 
-%center{
-	margin: 0 auto;
-	justify-content: center;
-	text-align: center;
-	align-items: center;
-}
+%center{margin: 0 auto;justify-content: center;text-align: center;align-items: center;}
