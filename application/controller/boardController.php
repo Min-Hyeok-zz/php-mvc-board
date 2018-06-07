@@ -20,6 +20,7 @@
 			loginChk();
 			$this->view();
 			$this->write();
+			access($this->view->midx != $_SESSION['member']->idx,"작성자만 접근할 수 있습니다.");
 		}
 
 		//파일 다운로드
