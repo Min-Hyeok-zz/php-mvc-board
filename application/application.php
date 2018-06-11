@@ -2,11 +2,11 @@
 	Class Application{
 
 		function __construct(){//생성자 : 클래스가 로드될 때 자동으로 실행
-			$ctr = Application::getParam()->type."Controller";
+			$ctr = $this->getParam()->type."Controller";
 			new $ctr();
 		}
 
-		static function getParam(){//url 주소를 변수로 저장
+		function getParam(){//url 주소를 변수로 저장
 			if (isset($_GET['param'])) $get = explode("/", $_GET['param']);
 			$param['type'] = isset($get[0]) && $get[0] != "" ? $get[0] : "main";
 			$param['page'] = isset($get[1]) && $get[1] != "" ? $get[1] : NULL;

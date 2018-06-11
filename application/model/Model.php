@@ -12,36 +12,36 @@
 		}
 
 		//쿼리문 설정
-		function query($sql = false){
+		protected function query($sql = false){
 			if ($sql) $this->sql = $sql;//$this->sql로 초기화
 			$res = $this->db->query($this->sql);//$res에 쿼리정보 저장
 			if (!$res) {//$res가 없을 경우 sql문,오류메세지 출력
 				echo $this->sql;
 				echo "<pre>";
-				print_p($this->db->errorInfo());
+				print_r($this->db->errorInfo());
 				echo "</pre>";
 			} else{
 				return $res;//쿼리값 반환
 			}
 		}
 
-		function fetch($sql = false){
+		protected function fetch($sql = false){
 			if ($sql) $this->sql = $sql;
 			return $this->query()->fetch();
 		}
 
-		function fetchAll($sql = false){
+		protected function fetchAll($sql = false){
 			if ($sql) $this->sql = $sql;
 			return $this->query()->fetchAll();
 		}
 
-		function cnt($sql = false){
+		protected function cnt($sql = false){
 			if ($sql) $this->sql = $sql;
 			return $this->query()->rowCount();
 		}
 
 		//배열을 컬럼 형태로 반환
-		function get_column($arr,$cancel){
+		protected function get_column($arr,$cancel){
 			$cancel = explode("/", $cancel);
 			$column = "";
 			foreach ($arr as $key => $val) {
@@ -53,7 +53,7 @@
 		}
 
 		//action의 value값에 따라 쿼리문 변경
-		function get_query($column){
+		protected function get_query($column){
 			switch ($this->action) {
 				case 'insert':
 					$sql = "INSERT INTO {$this->table} SET ";

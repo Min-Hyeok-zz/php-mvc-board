@@ -117,7 +117,7 @@
 /* 헤더 */
 
 #header{
-	max-width: 1600px;
+	width: 100%;
 	height: 50px;
 	display: flex;
 	background: $mainColor;
@@ -125,11 +125,17 @@
 	@extend %center;
 	justify-content: space-between;
 	padding-left: 0 10px;
-	>#logo{
-		font-size: 24px;
-		margin-left: 10px;
-	}
 	>#gnb{
+		max-width: 1600px;
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		margin: 0 auto;
+		align-items: center;
+		>#logo{
+			font-size: 24px;
+			margin-left: 10px;
+		}
 		>ul{
 			display: flex;
 			>li > a{
@@ -189,4 +195,17 @@
 			}
 		}
 	}
+}
+
+/* 푸터 */
+
+#footer{
+	width: 100%;
+	height: 40px;
+	background: $mainColor;
+	color: #fff;
+	position: fixed;
+	bottom: 0;
+	text-align: center;
+	line-height: 40px;
 }

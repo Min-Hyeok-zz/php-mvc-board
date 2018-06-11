@@ -26,7 +26,14 @@
 		//파일 다운로드
 		function down(){
 			$data = $this->model->getView();
+			header("Pragma: public");
+			header("Expires: 0");
+			header("Content-Type: application/octet-stream");
 			header("Content-Disposition: attachment; filename=\"{$data->file_name}\"");
+			header("Content-Transfer-Encoding: binary");
+			header("Content-Length: {$data->file_size}");
+			ob_clean();
+			flush();
 			readfile(_DATA.$data->change_name);
 			exit;
 		}

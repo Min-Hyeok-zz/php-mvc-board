@@ -38,25 +38,17 @@
 		$name = $file['name'];//파일이름 저장
 		$tmp_name = $file['tmp_name'];//파일 상세정보 저장
 		access($tmp_name == "","파일이 업로드 되지 않았습니다.");//파일정보 없으면 뒤로
-		if (is_uploaded_file($tmp_name)) {//파일이 업로드 되었을 경우
-			$change_name = time().rand(0,99999);//파일이름 중복 안되게 change_name 생성
-			if (move_uploaded_file($tmp_name, _DATA.$change_name)) {//파일이 해당경로에 change_name으로 이름 바꿔서 업로드됨
-				return $change_name;//change_name 반환
-			}
-		}
+		$change_name = time().rand(0,99999);//파일이름 중복 안되게 change_name 생성
+		if (move_uploaded_file($tmp_name, _DATA.$change_name)) return $change_name; //업로드 후 $change_name 반환
 	}
 
 	//파일 용량 계산(MB단위)
 	function get_size($size){
 		$size /= 1024*1024;
-		if ($size > 1024) {
-			$size = $size/1024;
-			$size = substr($size, 0,5)."GB";
-		} else if ($size > 1) {
+		if ($size > 1) {
 			$size = number_format($size)."MB";
 		} else{
-			$size = ($size*1024)."KB";
-			$size = substr($size, 0,5)."KB";
+			$size = substr(($size*1024), 0,5)."KB";
 		}
 		return $size;
 	}

@@ -9,8 +9,8 @@
 </head>
 <body>
 	<header id="header">
-		<div id="logo"><a href="/">LOGO</a></div>
 		<nav id="gnb">
+			<div id="logo"><a href="/">LOGO</a></div>
 			<ul>
 				<?php if (isset($_SESSION['member'])): ?>
 				<li><a href="/member/mypage"><?php echo $_SESSION['member']->name ?>님</a></li>
